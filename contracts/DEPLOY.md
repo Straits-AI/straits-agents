@@ -2,7 +2,20 @@
 
 ## Deployed Contracts
 
-### Arbitrum Sepolia (Active)
+### BNB Smart Chain Testnet (Primary)
+
+| Contract | Address |
+|----------|---------|
+| IdentityRegistry | `0xef9CB6e223d4FC63E82e95b1A6CBFe0B31ef3DC4` |
+| ReputationRegistry | `0xdd0cF51e1442274Ea0410897b7c0F2606a2c1669` |
+| UsdcPaymaster | `0x9476C70Dd3e76f321028853c740F3dA2de27d355` |
+
+- **Chain ID:** 97
+- **Explorer:** https://testnet.bscscan.com
+- **Deployer:** `0x40e4CCd3Db59580b23F5dB16e1F9e1BCf6d2Bf8E`
+- **USDC:** `0x64544969ed7ebf5f083679233325356ebe738930`
+
+### Arbitrum Sepolia
 
 | Contract | Address |
 |----------|---------|
@@ -38,10 +51,9 @@ curl -L https://foundry.paradigm.xyz | bash
 foundryup
 ```
 
-2. Get testnet ETH from faucets:
+2. Get testnet tokens from faucets:
+   - BNB Smart Chain Testnet: https://www.bnbchain.org/en/testnet-faucet
    - Arbitrum Sepolia: https://faucet.quicknode.com/arbitrum/sepolia
-   - Base Sepolia: https://www.alchemy.com/faucets/base-sepolia
-   - Polygon Amoy: https://faucet.polygon.technology/
 
 3. Set up environment:
 ```bash
@@ -50,26 +62,28 @@ cp .env.example .env
 # Edit .env with your PRIVATE_KEY (with 0x prefix)
 ```
 
-## Deploy to Arbitrum Sepolia (Recommended)
+## Deploy to BNB Smart Chain Testnet (Recommended)
+
+```bash
+cd contracts
+bash scripts/deploy-bsc.sh
+```
+
+Or manually with `forge create`:
+
+```bash
+source .env
+forge create src/IdentityRegistry.sol:IdentityRegistry --rpc-url $BSC_TESTNET_RPC_URL --private-key $PRIVATE_KEY
+forge create src/ReputationRegistry.sol:ReputationRegistry --rpc-url $BSC_TESTNET_RPC_URL --private-key $PRIVATE_KEY
+forge create src/UsdcPaymaster.sol:UsdcPaymaster --rpc-url $BSC_TESTNET_RPC_URL --private-key $PRIVATE_KEY --constructor-args 0x64544969ed7ebf5f083679233325356ebe738930 0x0000000071727De22E5E9d8BAf0edAc6f37da032
+```
+
+## Deploy to Arbitrum Sepolia
 
 ```bash
 cd contracts
 source .env
 forge script scripts/Deploy.s.sol --rpc-url $ARBITRUM_SEPOLIA_RPC_URL --broadcast
-```
-
-## Deploy to Base Sepolia
-
-```bash
-source .env
-forge script scripts/Deploy.s.sol --rpc-url $BASE_SEPOLIA_RPC_URL --broadcast --verify
-```
-
-## Deploy to Polygon Amoy
-
-```bash
-source .env
-forge script scripts/Deploy.s.sol --rpc-url $POLYGON_AMOY_RPC_URL --broadcast --verify
 ```
 
 ## After Deployment
@@ -157,10 +171,8 @@ cast call <REPUTATION_REGISTRY_ADDRESS> \
 
 ```bash
 PRIVATE_KEY=0x<your-private-key>
-BASE_SEPOLIA_RPC_URL=https://sepolia.base.org
-POLYGON_AMOY_RPC_URL=https://rpc-amoy.polygon.technology
+BSC_TESTNET_RPC_URL=https://data-seed-prebsc-1-s1.binance.org:8545
 ARBITRUM_SEPOLIA_RPC_URL=https://sepolia-rollup.arbitrum.io/rpc
-BASESCAN_API_KEY=<optional>
-POLYGONSCAN_API_KEY=<optional>
+BSCSCAN_API_KEY=<optional>
 ARBISCAN_API_KEY=<optional>
 ```

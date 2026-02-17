@@ -2,7 +2,7 @@
 
 **Track:** Agent
 **Demo:** https://straits-agents-web.mystraits-ai.workers.dev
-**GitHub:** *(TODO: create repo and push)*
+**GitHub:** https://github.com/Straits-AI/straits-agents
 
 ---
 
@@ -109,14 +109,14 @@ Built by Straits AI using Claude Code (Anthropic) as the AI coding assistant.
 
 ## Submission Checklist
 
-- [ ] Fund deployer with tBNB from https://www.bnbchain.org/en/testnet-faucet
-- [ ] Deploy contracts: `cd contracts && bash scripts/deploy-bsc.sh`
-- [ ] Fill BSC contract addresses in `apps/web/src/lib/contracts.ts`
-- [ ] Set `PAYMASTER_ADDRESS_BSC` wrangler secret
-- [ ] Update `NEXT_PUBLIC_PAYMASTER_ADDRESS_BSC` in `wrangler.jsonc`
-- [ ] Redeploy: `cd apps/web && pnpm run deploy`
-- [ ] Create GitHub repo and push code
-- [ ] Create DoraHacks BUIDL page
-- [ ] Add contract addresses as on-chain proof
-- [ ] Add demo link + repo link
-- [ ] Submit before Feb 19 2026 3PM UTC
+- [x] Fund deployer with tBNB from https://www.bnbchain.org/en/testnet-faucet
+- [x] Deploy contracts: `cd contracts && bash scripts/deploy-bsc.sh`
+- [x] Fill BSC contract addresses in `apps/web/src/lib/contracts.ts`
+- [x] Set `PAYMASTER_ADDRESS_BSC` wrangler secret
+- [x] Update `NEXT_PUBLIC_PAYMASTER_ADDRESS_BSC` in `wrangler.jsonc`
+- [x] Redeploy: `cd apps/web && pnpm run deploy`
+- [x] Create GitHub repo and push code
+- [x] Create DoraHacks BUIDL page (https://dorahacks.io/buidl/39583)
+- [x] Add contract addresses as on-chain proof
+- [x] Add demo link + repo link
+- [x] Submit before Feb 19 2026 3PM UTC

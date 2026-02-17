@@ -144,7 +144,7 @@ straits-agents/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/straits-agents.git
+git clone https://github.com/Straits-AI/straits-agents.git
 cd straits-agents
 
 # Install dependencies
