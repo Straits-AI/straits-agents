@@ -1,0 +1,22 @@
+{
+  "name": "api-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@straits/core": "workspace:*",
+    "@straits/agent-runtime": "workspace:*",
+    "@straits/blockchain": "workspace:*",
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.105.0"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "straits-agents-web",
+  "account_id": "dc8d1b7da0b7adc9a295faad8e519458",
+  "compatibility_date": "2025-01-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": ".open-next/worker.js",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+
+  // D1 Database
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "straits-agents-db",
+      "database_id": "5cbf2fc8-d9bc-4f25-b1e3-013514c6962c"
+    }
+  ],
+
+  // KV Namespace
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "952e3d40a502485fbf0ecac222586a70"
+    }
+  ],
+
+  // R2 Bucket (enable R2 in Cloudflare Dashboard first, then uncomment)
+  // "r2_buckets": [
+  //   {
+  //     "binding": "R2",
+  //     "bucket_name": "straits-agents-storage"
+  //   }
+  // ],
+
+  // Vectorize Index
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "straits-agents-vectors"
+    }
+  ],
+
+  // Workers AI
+  "ai": {
+    "binding": "AI"
+  },
+
+  // Environment variables
+  "vars": {
+    "ENVIRONMENT": "production",
+    "NEXT_PUBLIC_PAYMASTER_ADDRESS": "0x0FcDC11dbf6F0f4D9E39b30c0B8689dD37DD34c7",
+    "NEXT_PUBLIC_PAYMASTER_ADDRESS_BSC": "0x9476C70Dd3e76f321028853c740F3dA2de27d355"
+  }
+}

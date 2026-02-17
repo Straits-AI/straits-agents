@@ -1,0 +1,47 @@
+name = "straits-api-gateway"
+main = "src/index.ts"
+compatibility_date = "2025-01-13"
+compatibility_flags = ["nodejs_compat"]
+
+# Durable Objects
+[durable_objects]
+bindings = [
+  { name = "SESSION_DO", class_name = "SessionDO" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["SessionDO"]
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "straits-agents-db"
+database_id = "d874c571-23d5-4b21-9f87-fa1e0363be88"
+
+# KV Namespace
+[[kv_namespaces]]
+binding = "KV"
+id = "6b7f76514eed404eb7f9dcf45f9d5c52"
+
+# R2 Bucket
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "straits-agents-storage"
+
+# Vectorize Index
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "straits-agents-vectors"
+
+# Workers AI
+[ai]
+binding = "AI"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "development"
+DEFAULT_CHAIN_ID = "84532"
+
+# Secrets (use wrangler secret put)
+# OPENROUTER_API_KEY
