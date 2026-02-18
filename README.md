@@ -188,6 +188,18 @@ See [contracts/DEPLOY.md](contracts/DEPLOY.md) for deployment instructions. Cont
 
 Each agent lives on one chain (via `agents.chain_id`). New agents default to BSC Testnet. Existing agents are on Arbitrum Sepolia.
 
+### Smart Contract Audit
+
+The three Solidity contracts have undergone a security audit with 92 Foundry tests. See [contracts/AUDIT.md](contracts/AUDIT.md) for the full report.
+
+**Key findings:** 1 Critical (token ID 0 duplicate wallet bypass — **fixed**), 3 Medium (postOp ETH drainage, manual exchange rate, integer precision loss), 7 Low, 5 Informational.
+
+**Run tests:**
+```bash
+cd contracts
+forge test -vvv
+```
+
 ## SDK Usage
 
 ### Installation
@@ -655,6 +667,42 @@ The home page (`/`) is a full marketing landing page with the following sections
 | Header | `src/components/Header.tsx` | Navigation bar with dark mode toggle |
 | Footer | `src/components/Footer.tsx` | Site-wide footer with nav columns, chain badge, copyright |
 | FeaturedAgentsCarousel | `src/components/FeaturedAgentsCarousel.tsx` | Horizontal scrollable carousel for featured agents |
+
+## AI Build Log
+
+This project was built entirely with **Claude Code** (Anthropic's CLI for Claude) over a series of focused sessions. Every feature — from smart contract deployment to the Remotion demo video — was designed, coded, debugged, and shipped through AI-assisted development.
+
+### How AI Was Used
+
+| Area | What Claude Code Did |
+|------|---------------------|
+| **Smart Contracts** | Wrote Solidity contracts (IdentityRegistry, ReputationRegistry, UsdcPaymaster), deployment scripts, and Foundry tests |
+| **Full-Stack App** | Scaffolded the entire Next.js 15 app on Cloudflare Workers — API routes, D1 schema, KV caching, Vectorize RAG pipeline |
+| **ERC-4337 Account Abstraction** | Implemented Safe Smart Account integration, custom UsdcPaymaster, self-bundled UserOperations — no Pimlico dependency |
+| **Embedded Wallets** | Built server-side custodial wallet system with AES-256-GCM encryption, automatic creation on registration |
+| **Agent Builder** | Created 5-step no-code wizard with 9 templates, BYOK support, MCP server integration, SKILL.md management |
+| **A2A Protocol** | Implemented Google's Agent-to-Agent standard — Agent Cards, JSON-RPC 2.0, directory discovery |
+| **Agent Memory** | Built observational memory system with async extraction, priority levels, KV-cached reads, and garbage collection |
+| **Security Hardening** | Encryption context separation, SSRF protection, rate limiting, constant-time OTP comparison, re-encryption migration |
+| **Multi-Chain** | Added BNB Chain support alongside Arbitrum Sepolia — chain-aware bundler, paymaster, and contract resolution |
+| **Demo Video** | Programmatically generated 71-second Remotion video with 12 animated scenes, transitions, and background music |
+| **Documentation** | Generated this README, API reference, architecture docs, and deployment guides |
+
+### Development Pattern
+
+Every session followed the same loop:
+1. **Plan** — Claude Code explored the codebase, identified files to change, and proposed an approach
+2. **Build** — Wrote code across multiple files simultaneously (sometimes 10+ files per feature)
+3. **Debug** — When things broke (AA23 reverts, SSRF edge cases, D1 auth failures), Claude Code diagnosed root causes and fixed them
+4. **Ship** — Deployed to Cloudflare Workers and verified on the live site
+
+### Key Debugging Examples
+
+- **Safe Smart Account AA23 revert**: Discovered that the Rhinestone ERC-7579 Launchpad calls a non-existent function on Safe4337Module. Fixed by removing the launchpad and using standard Safe 4337 flow.
+- **D1 migration auth failures**: `wrangler d1 execute --remote` kept failing with code 10000. Built a temporary Worker endpoint workaround that became the standard migration pattern.
+- **AI SDK version mismatch**: `@ai-sdk/openai@3.x` returns `specificationVersion: "v3"` but the project uses `ai@4.x` (expects `v1`). Pinned to `@ai-sdk/openai@1.x`.
+
+> Built with [Claude Code](https://claude.ai/claude-code) by Anthropic
 
 ## License
 

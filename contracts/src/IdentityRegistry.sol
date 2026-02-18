@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * @dev Each agent is represented as an NFT with associated metadata
  */
 contract IdentityRegistry is ERC721, ERC721URIStorage, Ownable {
-    uint256 private _nextTokenId;
+    uint256 private _nextTokenId = 1; // Start at 1 so walletToToken==0 means "not registered"
 
     struct AgentIdentity {
         address agentWallet;
