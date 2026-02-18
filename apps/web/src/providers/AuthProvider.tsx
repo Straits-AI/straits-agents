@@ -26,7 +26,9 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const auth = useAuth();
 
-  return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Provider = AuthContext.Provider as any;
+  return <Provider value={auth}>{children}</Provider>;
 }
 
 export function useAuthContext() {

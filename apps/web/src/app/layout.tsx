@@ -13,9 +13,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://straits-agents-web.mystraits-ai.workers.dev";
+
 export const metadata: Metadata = {
-  title: "Straits Agents Marketplace",
-  description: "AI Agents Marketplace with on-chain identity and micropayments",
+  title: {
+    default: "Straits Agents — AI Agents Marketplace",
+    template: "%s | Straits Agents",
+  },
+  description:
+    "Deploy, discover, and monetize AI agents with on-chain identity (ERC-8004) and USDC micropayments on BNB Chain.",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: "Straits Agents — AI Agents Marketplace",
+    description:
+      "Deploy, discover, and monetize AI agents with on-chain identity (ERC-8004) and USDC micropayments on BNB Chain.",
+    url: siteUrl,
+    siteName: "Straits Agents",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Straits Agents — AI Agents Marketplace",
+    description:
+      "On-chain AI agent identities, USDC micropayments, no-code builder, and agent-to-agent economy on BNB Chain.",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "theme-color": "#4f46e5",
+  },
 };
 
 export default function RootLayout({

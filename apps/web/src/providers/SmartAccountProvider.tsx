@@ -8,11 +8,9 @@ const SmartAccountContext = createContext<UseSmartAccountReturn | null>(null);
 export function SmartAccountProvider({ children }: { children: ReactNode }) {
   const smartAccount = useSmartAccount();
 
-  return (
-    <SmartAccountContext.Provider value={smartAccount}>
-      {children}
-    </SmartAccountContext.Provider>
-  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const Provider = SmartAccountContext.Provider as any;
+  return <Provider value={smartAccount}>{children}</Provider>;
 }
 
 export function useSmartAccountContext(): UseSmartAccountReturn {
