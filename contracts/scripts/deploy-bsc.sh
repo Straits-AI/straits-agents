@@ -1,6 +1,6 @@
 #!/bin/bash
 # Deploy all contracts to BSC Testnet
-# Prerequisites: Fund deployer 0x6ba4e80bf45c3867EE99Cd23aA59b7f93a33F593 with ~0.05 tBNB
+# Prerequisites: Fund deployer 0x40e4CCd3Db59580b23F5dB16e1F9e1BCf6d2Bf8E with ~0.05 tBNB
 # Faucet: https://www.bnbchain.org/en/testnet-faucet
 
 set -e
@@ -15,7 +15,7 @@ echo "=== BSC Testnet Deployment ==="
 echo ""
 
 # Check balance
-BALANCE=$(cast balance 0x6ba4e80bf45c3867EE99Cd23aA59b7f93a33F593 --rpc-url "$BSC_TESTNET_RPC_URL" --ether 2>/dev/null || echo "0")
+BALANCE=$(cast balance 0x40e4CCd3Db59580b23F5dB16e1F9e1BCf6d2Bf8E --rpc-url "$BSC_TESTNET_RPC_URL" --ether 2>/dev/null || echo "0")
 echo "Deployer balance: $BALANCE tBNB"
 
 if [ "$BALANCE" = "0" ] || [ "$BALANCE" = "0.000000000000000000" ]; then

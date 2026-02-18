@@ -6,7 +6,7 @@
 
 | Contract | Address |
 |----------|---------|
-| IdentityRegistry | `0xef9CB6e223d4FC63E82e95b1A6CBFe0B31ef3DC4` |
+| IdentityRegistry (v2) | `0xa658c524DD8a4a13026C1B197f78b164DAd1Ba34` |
 | ReputationRegistry | `0xdd0cF51e1442274Ea0410897b7c0F2606a2c1669` |
 | UsdcPaymaster | `0x9476C70Dd3e76f321028853c740F3dA2de27d355` |
 
@@ -19,27 +19,28 @@
 
 | Contract | Address |
 |----------|---------|
-| IdentityRegistry | `0xfc4e8b1d87aae1F1577eeFF16d607E92afCde55D` |
+| IdentityRegistry | `0x4B86B7317e8a4aD52bD9C388c1015d89Ebc8D065` |
 | ReputationRegistry | `0x0C998b08FF0C9c7470272c9211935692B78Cb3AF` |
 | UsdcPaymaster | `0x0FcDC11dbf6F0f4D9E39b30c0B8689dD37DD34c7` |
 
 - **Chain ID:** 421614
 - **Explorer:** https://sepolia.arbiscan.io
-- **Deployer:** `0x6ba4e80bf45c3867EE99Cd23aA59b7f93a33F593`
+- **Deployer:** `0x40e4CCd3Db59580b23F5dB16e1F9e1BCf6d2Bf8E`
+- **Note:** IdentityRegistry v2 (token IDs start at 1, fixes C-01 duplicate wallet bypass)
 
-### Registered Agents (On-Chain)
+### Registered Agents (On-Chain — Arbitrum Sepolia)
 
 | Token ID | Agent | Wallet |
 |----------|-------|--------|
-| 0 | QR Menu Assistant | `0x0000...0001` |
-| 1 | Retail Assistant | `0x0000...0002` |
-| 2 | Product Support | `0x0000...0003` |
-| 3 | PRD Generator | `0x0000...0004` |
-| 4 | Sales Proposal | `0x0000...0005` |
-| 5 | Postmortem | `0x0000...0006` |
-| 6 | Roadmap | `0x0000...0007` |
-| 7 | SOP Generator | `0x0000...0008` |
-| 8 | Opinion Research | `0x0000...0009` |
+| 1 | QR Menu Assistant | `0x0000...0001` |
+| 2 | Retail Assistant | `0x0000...0002` |
+| 3 | Product Support | `0x0000...0003` |
+| 4 | PRD Generator | `0x0000...0004` |
+| 5 | Sales Proposal | `0x0000...0005` |
+| 6 | Postmortem | `0x0000...0006` |
+| 7 | Roadmap | `0x0000...0007` |
+| 8 | SOP Generator | `0x0000...0008` |
+| 9 | Opinion Research | `0x0000...0009` |
 
 ---
 

@@ -315,7 +315,7 @@ Ran 3 test suites: 92 tests passed, 0 failed, 0 skipped
 
 | Contract | Address |
 |----------|---------|
-| IdentityRegistry | `0xfc4e8b1d87aae1F1577eeFF16d607E92afCde55D` |
+| IdentityRegistry (v2) | `0x4B86B7317e8a4aD52bD9C388c1015d89Ebc8D065` |
 | ReputationRegistry | `0x0C998b08FF0C9c7470272c9211935692B78Cb3AF` |
 | UsdcPaymaster (v2) | `0x0FcDC11dbf6F0f4D9E39b30c0B8689dD37DD34c7` |
 
@@ -323,7 +323,7 @@ Ran 3 test suites: 92 tests passed, 0 failed, 0 skipped
 
 | Contract | Address |
 |----------|---------|
-| IdentityRegistry | `0xef9CB6e223d4FC63E82e95b1A6CBFe0B31ef3DC4` |
+| IdentityRegistry (v2) | `0xa658c524DD8a4a13026C1B197f78b164DAd1Ba34` |
 | ReputationRegistry | `0xdd0cF51e1442274Ea0410897b7c0F2606a2c1669` |
 | UsdcPaymaster | `0x9476C70Dd3e76f321028853c740F3dA2de27d355` |
 

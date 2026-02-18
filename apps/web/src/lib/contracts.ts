@@ -4,12 +4,12 @@ import { arbitrumSepolia, bscTestnet } from "viem/chains";
 // Contract addresses per chain
 export const CONTRACT_ADDRESSES = {
   arbitrumSepolia: {
-    identityRegistry: "0xfc4e8b1d87aae1F1577eeFF16d607E92afCde55D" as Address,
+    identityRegistry: "0x4B86B7317e8a4aD52bD9C388c1015d89Ebc8D065" as Address,
     reputationRegistry: "0x0C998b08FF0C9c7470272c9211935692B78Cb3AF" as Address,
     usdcPaymaster: "0x0FcDC11dbf6F0f4D9E39b30c0B8689dD37DD34c7" as Address,
   },
   bscTestnet: {
-    identityRegistry: "0xef9CB6e223d4FC63E82e95b1A6CBFe0B31ef3DC4" as Address,
+    identityRegistry: "0xa658c524DD8a4a13026C1B197f78b164DAd1Ba34" as Address,
     reputationRegistry: "0xdd0cF51e1442274Ea0410897b7c0F2606a2c1669" as Address,
     usdcPaymaster: "0x9476C70Dd3e76f321028853c740F3dA2de27d355" as Address,
   },
