@@ -21,9 +21,16 @@ contracts/out
 .env.*.local
 .dev.vars
 
-# IDE
+# IDE & AI tools
 .idea
 .vscode
+.cursor
+.agent
+.agents
+.claude
+.kiro
+.qoder
+.trae
 *.swp
 *.swo
 
